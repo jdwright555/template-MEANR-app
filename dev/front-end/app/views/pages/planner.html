@@ -1,0 +1,28 @@
+<div class="jumbotron text-center">   
+    <h1 ng-hide="planner.displaytag">No results to display</h1>
+    <h3 ng-hide="planner.displaytag">Generate a planner from the previous page</h1>
+    <h1 ng-show="planner.displaytag">Your planner has been generated:</h1>
+</div>
+
+
+<table class="table table-bordered table-striped table-responsive" ng-show="planner.displaytag">
+	<thead>
+		<tr>
+			<th>First name</th>
+			<th>Surname</th>
+			<th>Days to next birthday</th>
+			<th>Age at next birthday</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="plan in planner.planner | orderBy:'days_to_bd'">
+			<td>{{ plan.firstname }}</td>
+			<td>{{ plan.lastname }}</td>
+			<td>{{ plan.days_to_bd }}</td>
+			<td>{{ plan.ages_ny }}</td>
+		</tr>
+	</tbody>
+</table>
+
+
+	    

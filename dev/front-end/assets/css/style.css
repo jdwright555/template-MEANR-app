@@ -1,0 +1,20 @@
+main 					{
+	padding-top:30px;	
+}
+
+/* HEADER 
+===================== */
+header .navbar 		{ 
+	border-radius:0;
+}
+
+.fade {
+    opacity: 1;
+}
+.fade.ng-hide {
+    opacity: 0;
+}
+.fade.ng-hide-remove {
+    transition: all .5s linear;
+    /*display: block !important;*/
+}

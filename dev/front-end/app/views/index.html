@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My Routing App!</title>
+	
+	<!-- set the base path for angular routing -->
+	<base href="/">
+	
+	<!-- CSS -->
+	<!-- load bootstrap, fontawesome and animate via CDN -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- JS -->
+
+	<!-- load angular, angular route and angular animate via cdn -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>	
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
+	<!-- D3.js: for plotting -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+	<!-- jQuery: for plotting, loading this before angular allows scripts within ng-views to be executed -->
+  	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  	<!-- Bootstrap js -->
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<!-- plotly -->
+	<script src="http://cdn.plot.ly/plotly-latest.min.js"></script>
+	
+	<!-- controllers -->
+	<script src="app/controllers/homeCtrl.js"></script>
+	<script src="app/controllers/contactsCtrl.js"></script>
+	<script src="app/controllers/plannerCtrl.js"></script>
+
+	<!-- services -->
+	<script src="app/services/appService.js"></script>
+
+	<!-- main Angular app files -->
+	<script src="app/app.routes.js"></script>
+	<script src="app/app.js"></script>
+
+</head>
+<body ng-app="routerApp" ng-controller="mainController as main">
+	<!-- HEADER AND NAVBAR -->
+	
+	<nav class="navbar navbar-inverse">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+      			<a class="navbar-brand" href="/">myAddressBook</a>
+    		</div>
+    		<ul class="nav navbar-nav">
+      			<li><a href="/">Home</a></li>
+      			<li><a href="/contacts">Contacts</a></li>
+      			<li><a href="/planner">Planner</a></li>
+    		</ul>
+  		</div>
+	</nav>
+
+	<main class="container">
+		<!-- ANGULAR VIEWS -->
+		<div ng-view></div>
+	</main>
+</body>
+</html>
+
