@@ -12,4 +12,4 @@ R packages:
 * RServe - must be running in the background to allow the Node API to call R scripts
 * rmongodb - allows R to connect to a MongoDB instance
 * RJSONIO - parses JSON statements into R vectors and vice versa
-* lubridata (this app only) - used for date manipulation by the example script included here, not required by MEANR stack 
+* lubridate (this app only) - used for date manipulation by the example script included here, not required by MEANR stack 
