@@ -1,13 +1,7 @@
 master <- function (pathObj) {
 
   # loads libraries
-  library(rmongodb)
-  library(RCurl)
-  library(plyr)
-  library(dplyr)
-  library(tidyr)
   library(RJSONIO)
-  library(lubridate)
 
   # sets path for scripts    
   pathObj = fromJSON(pathObj)   # takes current path (.../routes) as input, converts from JSON to R vector 
