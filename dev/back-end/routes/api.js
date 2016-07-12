@@ -1,7 +1,6 @@
 var bodyParser 		= require('body-parser'); 				// get body-parser middleware
 var Contact 		= require('../models/contact'); 		// call contacts data model 
 var Planner	   		= require('../models/planner');			// call the planner data model
-// var DataModel3	   	= require('../models/data-model3');	
 var config     		= require('../../config');				// contains reference to database path
 var rio 	   		= require('rio');						// calls node-rio module; allows calling of R scripts
 var path 	   		= require('path');						// calls "path" module; for specifying/manipulating path names
@@ -20,7 +19,7 @@ module.exports = function(app, express) {
 	// ----------------------------------------------------
 	apiRouter.route('/contacts')
 
-		// create a bank entry (accessed at POST http://localhost:8080/api/contacts)
+		// create a contact entry (accessed at POST http://localhost:8080/api/contacts)
 		.post(function(req, res) {
 
 			var contact = new Contact();		// create a new instance of the Contact model
@@ -43,7 +42,7 @@ module.exports = function(app, express) {
 
 		})
 
-		// get all banks posted (accessed at GET http://localhost:8080/api/contacts)
+		// get all contacts posted (accessed at GET http://localhost:8080/api/contacts)
 		.get(function(req, res) {
 
 			Contact.find({}, function(err, contacts) {
