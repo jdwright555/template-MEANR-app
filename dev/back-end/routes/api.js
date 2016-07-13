@@ -109,24 +109,24 @@ module.exports = function(app, express) {
 
 		.get(function(req, res){
 
-			function displayResponse(err, response) {
-        		if (!err) {
-        			response = JSON.parse(response);
-        	    	console.log(response[0]);
-        	    	res.json({ message: response[0] });
-        		} else {
-        	    	console.log("Rserve call failed. " + err);
-        		}
-    		};
+				function displayResponse(err, response) {
+        			if (!err) {
+        				response = JSON.parse(response);
+        	    		console.log(response[0]);
+        	    		res.json({ message: response[0] });
+        			} else {
+        	    		console.log("Rserve call failed. " + err);
+        			}
+    			};
 
-    		// pass path variable to function to allow calling of secondary R scripts
-    		var pathObj = { pathname: __dirname };
+    			// pass path variable to function to allow calling of secondary R scripts
+    			var pathObj = { pathname: __dirname };
 
-			rio.sourceAndEval(path.join(__dirname, "../scripts/script-master.R"), {
-    			entryPoint: "master",
-    			data: pathObj,
-    			callback: displayResponse
-			});
+				rio.sourceAndEval(path.join(__dirname, "../scripts/script-master.R"), {
+    				entryPoint: "master",
+    				data: pathObj,
+    				callback: displayResponse
+				});
 
 		});
 
@@ -137,7 +137,7 @@ module.exports = function(app, express) {
 		// get all banks posted (accessed at GET http://localhost:8080/api/planner)
 		.get(function(req, res) {
 
-			Planner.find({}, function(err, planners) {
+			Planner.find(function(err, planners) {
 				if (err) res.send(err);
 
 				// return the planner
