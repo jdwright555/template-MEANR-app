@@ -45,7 +45,7 @@ module.exports = function(app, express) {
 		// get all contacts posted (accessed at GET http://localhost:8080/api/contacts)
 		.get(function(req, res) {
 
-			Contact.find(function(err, contacts) {
+			Contact.find({}, function(err, contacts) {
 				if (err) res.send(err);
 
 				// return the contacts
@@ -134,10 +134,10 @@ module.exports = function(app, express) {
 	// ----------------------------------------------------
 	apiRouter.route('/planner')
 
-		// get all banks posted (accessed at GET http://localhost:8080/api/planner)
+		// get all contacts posted (accessed at GET http://localhost:8080/api/planner)
 		.get(function(req, res) {
 
-			Planner.find(function(err, planners) {
+			Planner.find({}, function(err, planners) {
 				if (err) res.send(err);
 
 				// return the planner
